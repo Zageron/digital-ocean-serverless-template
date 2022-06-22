@@ -1,0 +1,6 @@
+packages:
+  - name: digitalocean-serverless
+    actions:
+      - name: test
+        runtime: 'python:default'
+        web: raw

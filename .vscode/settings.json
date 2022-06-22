@@ -1,0 +1,12 @@
+{
+    "search.exclude": {
+        "**/virtualenv": true
+    },
+    "explorer.excludeGitIgnore": false,
+    "files.exclude": {
+        "**/virtualenv": true
+    },
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": true,
+    "files.insertFinalNewline": true
+}
