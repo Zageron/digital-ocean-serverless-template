@@ -4,14 +4,14 @@
     "namespace": "fn-45d99ef5-cd4a-44b3-b587-422dfb4793ba",
     "packageVersions": {
       "digitalocean-serverless": {
-        "version": "0.0.1",
+        "version": "0.0.2",
         "digest": "1774c279e80918da7f883e2e1cb4d358036356995a85b484c13f4558ceb70e2e"
       }
     },
     "actionVersions": {
       "digitalocean-serverless/test": {
-        "version": "0.0.1",
-        "digest": "5ff8ff428785df80f5a35b84d0cec346ca0ed1c7dfd249564d8291dcd99281ad"
+        "version": "0.0.3",
+        "digest": "b59ca857dfc70489bb82bf236fdfde2e31e05b90aaef1a2339867fcb224b969b"
       }
     },
     "webHashes": {}

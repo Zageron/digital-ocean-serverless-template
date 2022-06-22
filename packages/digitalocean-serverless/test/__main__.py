@@ -4,6 +4,6 @@ def main(args):
     """
 
     return {
-        "body": {"data": "Hello, world!"},
+        "body": {"data": "Hello, watched incremental build!"},
         "statusCode": 200,
     }

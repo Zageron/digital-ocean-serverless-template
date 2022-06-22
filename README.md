@@ -1,5 +1,13 @@
 # Pixel Dailies - Count via Twitter
 
+## Setting up doctl
+
+- Install doctl manually, or via choco. `choco install doctl`
+- Authorize doctl. `doctl auth init --context customname`
+- Switch to the new identity context. `doctl auth switch --context customname`
+- Install the DigitalOcean sandbox: `doctl sls install`
+- Connect to your sandbox: `doctl sandbox connect`
+
 ## Convert from Template to Function
 
 - Modify `.do/deploy.template.yaml`
@@ -36,3 +44,8 @@ then use the following command to keep to one.
 
 `doctl sls deploy . --remote-build --env .env`
 
+### Watch
+
+You may also use incremental directory watching to avoid having to run deployment automatically.
+
+`doctl sls watch .`
