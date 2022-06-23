@@ -1,6 +1,7 @@
-# Pixel Dailies - Count via Twitter
+# Digital Ocean - Serverless Template
 
-- [Pixel Dailies - Count via Twitter](#pixel-dailies---count-via-twitter)
+- [Digital Ocean - Serverless Template](#digital-ocean---serverless-template)
+  - [Delete the Licence](#delete-the-licence)
   - [Setting up doctl](#setting-up-doctl)
   - [Convert from Template to Function](#convert-from-template-to-function)
     - [Project.yml](#projectyml)
@@ -12,6 +13,12 @@
   - [Renaming an App](#renaming-an-app)
     - [Renaming Steps](#renaming-steps)
     - [Execution Status](#execution-status)
+
+----
+
+## Delete the Licence
+
+> Delete `LICENCE.markdown` before you start doing anything.
 
 ----
 
