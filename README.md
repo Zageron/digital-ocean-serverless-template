@@ -1,5 +1,20 @@
 # Pixel Dailies - Count via Twitter
 
+- [Pixel Dailies - Count via Twitter](#pixel-dailies---count-via-twitter)
+  - [Setting up doctl](#setting-up-doctl)
+  - [Convert from Template to Function](#convert-from-template-to-function)
+    - [Project.yml](#projectyml)
+  - [Testing - Deploy to DO Function](#testing---deploy-to-do-function)
+    - [Environment Variables](#environment-variables)
+    - [Watch](#watch)
+    - [Errors](#errors)
+  - [Deploying to an App](#deploying-to-an-app)
+  - [Renaming an App](#renaming-an-app)
+    - [Renaming Steps](#renaming-steps)
+    - [Execution Status](#execution-status)
+
+----
+
 ## Setting up doctl
 
 - Install doctl manually, or via choco. `choco install doctl`
@@ -7,6 +22,8 @@
 - Switch to the new identity context. `doctl auth switch --context customname`
 - Install the DigitalOcean sandbox: `doctl sls install`
 - Connect to your sandbox: `doctl sandbox connect`
+
+----
 
 ## Convert from Template to Function
 
@@ -32,20 +49,53 @@ packages:
 
 ```
 
+----
+
 ## Testing - Deploy to DO Function
 
 If you have dependencies in any of the actions,
 you will need to implement `build.<sh|cmd>` scripts for your platform.
 
-`doctl sls deploy . --incremental --env .env`
+`doctl sls deploy . --incremental`
 
 If you'd rather just implement different platform build scripts,
 then use the following command to keep to one.
 
-`doctl sls deploy . --remote-build --env .env`
+`doctl sls deploy . --remote-build`
+
+### Environment Variables
+
+If you have environment variables, add this flag to the deploy command.
+`--env .env`
 
 ### Watch
 
 You may also use incremental directory watching to avoid having to run deployment automatically.
 
 `doctl sls watch .`
+
+### Errors
+
+> Error: While deploying action 'some-service/action': Action is named in the config but does not exist in the project
+
+This means that you've forgotten to rename the folder structures that your function lives in. Ex. `packagtes/digitalocean-serverless/test`.
+
+----
+
+## Deploying to an App
+
+- Before you deploy to an app you'll need to make the build scripts executable if you haven't already. Run `git update-index --chmod=+x path/to/build.ext` for each of the builds scripts.
+
+----
+
+## Renaming an App
+
+### Renaming Steps
+
+- Rename the function folder. `packages/myservice/function` -> `packages/newservice/newfuncname`
+- Update `project.yml` name fields.
+- Update `.do/deploy.template.yaml` name fields.
+
+### Execution Status
+
+- If you rename the app, the build scripts will lose their 755 property. Run [See Deploying to an App](#deploying-to-an-app)

@@ -2,5 +2,8 @@ packages:
   - name: digitalocean-serverless
     actions:
       - name: test
+        limits:
+            memory: 256 # Default, 128 is the lowest possible, prefer that.
+            timeout: 3000 # Default, push this as low as possible.
         runtime: 'python:default'
         web: raw

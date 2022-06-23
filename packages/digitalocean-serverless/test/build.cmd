@@ -1,4 +1,1 @@
-virtualenv virtualenv
-virtualenv/bin/activate.ps1
-pip install -r requirements.txt
-virtualenv/bin/deactivate.bat
+PowerShell.exe -command "%~dp0build.ps1"
