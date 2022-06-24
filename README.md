@@ -7,6 +7,7 @@
     - [Project.yml](#projectyml)
   - [Testing - Deploy to DO Function](#testing---deploy-to-do-function)
     - [Environment Variables](#environment-variables)
+    - [Testing a deployed function via CLI](#testing-a-deployed-function-via-cli)
     - [Watch](#watch)
     - [Errors](#errors)
   - [Deploying to an App](#deploying-to-an-app)
@@ -74,6 +75,13 @@ then use the following command to keep to one.
 
 If you have environment variables, add this flag to the deploy command.
 `--env .env`
+
+### Testing a deployed function via CLI
+
+- After the function has been successfully deployed,
+call `doctl sbx fn get namespace/function --url` to get the URL of your function.
+- Use `wget <link>` to activate a simple function.
+- Use `doctl sls activations get` to get the results of the most recent activation.
 
 ### Watch
 
