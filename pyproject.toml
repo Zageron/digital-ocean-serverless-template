@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "digital-ocean-serverless"
+version = "0.1.0"
+description = "A template repository for creating DO serverless functions."
+authors = ["Zageron <hello@zageron.ca>"]
+license = "UNLICENSE"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
